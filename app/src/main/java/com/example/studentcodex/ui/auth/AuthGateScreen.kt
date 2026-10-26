@@ -25,6 +25,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Check
+import androidx.compose.material.icons.rounded.CloudDownload
 import androidx.compose.material.icons.rounded.Close
 import androidx.compose.material.icons.rounded.Visibility
 import androidx.compose.material.icons.rounded.VisibilityOff
@@ -49,6 +50,7 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -63,6 +65,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.studentcodex.R
 import com.example.studentcodex.data.school.looksLikeCourseCode
+import com.example.studentcodex.ui.components.ClassroomImportSheet
+import com.example.studentcodex.ui.components.ClassroomImportUiState
 import com.example.studentcodex.ui.theme.Spacing
 
 /**
@@ -94,6 +98,11 @@ fun AuthGateScreen(
     onGoogleSignIn: (Activity?) -> Unit,
     onDismissGoogleSetup: () -> Unit,
     onSubmit: () -> Unit,
+    classroomImport: ClassroomImportUiState,
+    onImportStart: () -> Unit,
+    onImportCourseToggled: (String) -> Unit,
+    onImportConfirmed: () -> Unit,
+    onImportDismissed: () -> Unit,
     onExploreAsGuest: () -> Unit,
 ) {
     val isSignUp = state.mode == AuthMode.SIGN_UP
@@ -267,6 +276,11 @@ fun AuthGateScreen(
                 onInputChange = onCourseCodeInputChange,
                 onAdd = onAddCourseCode,
                 onRemove = onRemoveCourseCode,
+                classroomImport = classroomImport,
+                onImportStart = onImportStart,
+                onImportCourseToggled = onImportCourseToggled,
+                onImportConfirmed = onImportConfirmed,
+                onImportDismissed = onImportDismissed,
             )
         }
 
@@ -310,6 +324,29 @@ fun AuthGateScreen(
             }
         }
 
+        Spacer(Modifier.height(Spacing.md))
+
+        // Google Sign-In sits directly below the sign-in button. Supabase
+        // creates the account on first sign-in (then asks for the name once),
+        // so there is no separate "sign up with Google".
+        OutlinedButton(
+            onClick = { onGoogleSignIn(activity) },
+            enabled = !state.isLoading,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(48.dp),
+        ) {
+            Image(
+                painter = painterResource(R.drawable.ic_google_logo),
+                contentDescription = stringResource(R.string.auth_google_cd),
+                modifier = Modifier.size(20.dp),
+            )
+            Spacer(Modifier.width(Spacing.sm))
+            Text(stringResource(R.string.auth_google_cta))
+        }
+
+        Spacer(Modifier.height(Spacing.md))
+
         TextButton(
             onClick = onSwitchMode,
             enabled = !state.isLoading,
@@ -336,27 +373,6 @@ fun AuthGateScreen(
                 modifier = Modifier.padding(horizontal = Spacing.md),
             )
             HorizontalDivider(modifier = Modifier.weight(1f))
-        }
-
-        Spacer(Modifier.height(Spacing.md))
-
-        // Google Sign-In covers both modes: Supabase creates the account on
-        // first sign-in (then asks for the name once), so there is no
-        // separate "sign up with Google".
-        OutlinedButton(
-            onClick = { onGoogleSignIn(activity) },
-            enabled = !state.isLoading,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(48.dp),
-        ) {
-            Image(
-                painter = painterResource(R.drawable.ic_google_logo),
-                contentDescription = stringResource(R.string.auth_google_cd),
-                modifier = Modifier.size(20.dp),
-            )
-            Spacer(Modifier.width(Spacing.sm))
-            Text(stringResource(R.string.auth_google_cta))
         }
 
         Spacer(Modifier.height(Spacing.md))
@@ -410,6 +426,11 @@ fun ProfileCompletionScreen(
     onRemoveCourseCode: (String) -> Unit,
     onRetryDirectory: () -> Unit,
     onSubmit: () -> Unit,
+    classroomImport: ClassroomImportUiState,
+    onImportStart: () -> Unit,
+    onImportCourseToggled: (String) -> Unit,
+    onImportConfirmed: () -> Unit,
+    onImportDismissed: () -> Unit,
     onCancel: () -> Unit,
 ) {
     var passwordVisible by rememberSaveable { mutableStateOf(false) }
@@ -509,6 +530,11 @@ fun ProfileCompletionScreen(
             onInputChange = onCourseCodeInputChange,
             onAdd = onAddCourseCode,
             onRemove = onRemoveCourseCode,
+            classroomImport = classroomImport,
+            onImportStart = onImportStart,
+            onImportCourseToggled = onImportCourseToggled,
+            onImportConfirmed = onImportConfirmed,
+            onImportDismissed = onImportDismissed,
         )
 
         if (needsPassword) {
@@ -747,6 +773,11 @@ internal fun CourseCodesField(
     onInputChange: (String) -> Unit,
     onAdd: (String?) -> Unit,
     onRemove: (String) -> Unit,
+    classroomImport: ClassroomImportUiState = ClassroomImportUiState.Idle,
+    onImportStart: (() -> Unit)? = null,
+    onImportCourseToggled: (String) -> Unit = {},
+    onImportConfirmed: () -> Unit = {},
+    onImportDismissed: () -> Unit = {},
 ) {
     val query = input.trim()
     val registry = (directory as? SchoolDirectoryState.Ready)?.directory
@@ -792,6 +823,39 @@ internal fun CourseCodesField(
                     )
                 }
             }
+        }
+
+        // The easy path: pull the subjects straight from Google Classroom.
+        // Manual picking/typing below stays exactly as it was.
+        if (onImportStart != null) {
+            OutlinedButton(
+                onClick = onImportStart,
+                modifier = Modifier.fillMaxWidth(),
+            ) {
+                Icon(
+                    Icons.Rounded.CloudDownload,
+                    contentDescription = null,
+                    modifier = Modifier.size(18.dp),
+                )
+                Spacer(Modifier.width(Spacing.sm))
+                Text(stringResource(R.string.classroom_import_button))
+            }
+            Text(
+                // The Google account is chosen AFTER the tap: the system
+                // chooser lists every Google account on the device.
+                text = stringResource(R.string.classroom_import_choose_hint),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = Spacing.xs),
+            )
+            // The picker sheet itself: a modal overlay, hidden while Idle.
+            ClassroomImportSheet(
+                state = classroomImport,
+                onToggleCourse = onImportCourseToggled,
+                onConfirm = onImportConfirmed,
+                onDismiss = onImportDismissed,
+            )
+            Spacer(Modifier.height(Spacing.md))
         }
 
         CoursePickerDropdown(
@@ -1110,4 +1174,5 @@ private fun googleErrorText(error: AuthError.Google): String {
     val detail = error.detail?.takeIf { it.isNotBlank() } ?: return base
     return "$base ($detail)"
 }
+
 
