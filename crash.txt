@@ -1,0 +1,144 @@
+﻿Drop box contents: 17 entries
+Max entries: 1000
+Low priority rate limit period: 2000 ms
+Low priority tags: {data_app_wtf, keymaster, system_server_wtf, system_app_strictmode, system_app_wtf, system_server_strictmode, data_app_strictmode, netstats}
+Searching for: data_app_crash
+
+========================================
+2026-10-25 15:54:12 data_app_crash (text, 4807 bytes)
+SystemUptimeMs: 94296073
+Process: com.example.studentcodex
+PID: 24703
+UID: 10210
+Frozen: false
+Flags: 0x20e8bf46
+Package: com.example.studentcodex v1 (1.0)
+Foreground: Yes
+Process-Runtime: 44437
+Timestamp: 2026-10-25 15:54:12.784+0000
+Build: google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.036/12592187:user/release-keys
+Crash-Handler: com.android.internal.os.RuntimeInit$KillApplicationHandler
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+java.util.UnknownFormatConversionException: Conversion = 'End of String'
+	at java.util.Formatter$FormatSpecifierParser.peek(Formatter.java:2821)
+	at java.util.Formatter$FormatSpecifierParser.<init>(Formatter.java:2769)
+	at java.util.Formatter.parse(Formatter.java:2737)
+	at java.util.Formatter.format(Formatter.java:2686)
+	at java.util.Formatter.format(Formatter.java:2640)
+	at java.lang.String.format(String.java:4068)
+	at android.content.res.Resources.getString(Resources.java:584)
+	at androidx.compose.ui.res.StringResources_androidKt.stringResource(StringResources.android.kt:48)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt.ClassroomConnectionCard$lambda$71(SettingsScreen.kt:775)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt$$ExternalSyntheticLambda12.invoke(D8$$SyntheticClass:0)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:122)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:52)
+	at androidx.compose.material3.SurfaceKt$Surface$1.invoke(Surface.kt:130)
+	at androidx.compose.material3.SurfaceKt$Surface$1.invoke(Surface.kt:110)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:122)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:52)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:408)
+	at androidx.compose.material3.SurfaceKt.Surface-T9BRK9s(Surface.kt:107)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt.ClassroomConnectionCard(SettingsScreen.kt:681)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt.SettingsScreen(SettingsScreen.kt:226)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt.SettingsScreen$lambda$35(Unknown Source:14)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt$$ExternalSyntheticLambda22.invoke(D8$$SyntheticClass:0)
+	at androidx.compose.runtime.RecomposeScopeImpl.compose(RecomposeScopeImpl.kt:204)
+	at androidx.compose.runtime.GapComposer.recomposeToGroupEnd(GapComposer.kt:1678)
+	at androidx.compose.runtime.GapComposer.skipCurrentGroup(GapComposer.kt:2014)
+	at androidx.compose.runtime.GapComposer.doCompose-aFTiNEg(GapComposer.kt:2655)
+	at androidx.compose.runtime.GapComposer.recompose-aFTiNEg$runtime(GapComposer.kt:2577)
+	at androidx.compose.runtime.CompositionImpl.recompose(Composition.kt:1164)
+	at androidx.compose.runtime.Recomposer.performRecompose(Recomposer.kt:1318)
+	at androidx.compose.runtime.Recomposer.access$performRecompose(Recomposer.kt:191)
+	at androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2.invokeSuspend$lambda$2(Recomposer.kt:655)
+	at androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2$$ExternalSyntheticLambda0.invoke(D8$$SyntheticClass:0)
+	at androidx.compose.ui.platform.AndroidUiFrameClock$withFrameNanos$2$callback$1.doFrame(AndroidUiFrameClock.android.kt:39)
+	at androidx.compose.ui.platform.AndroidUiDispatcher.performFrameDispatch(AndroidUiDispatcher.android.kt:108)
+	at androidx.compose.ui.platform.AndroidUiDispatcher.access$performFrameDispatch(AndroidUiDispatcher.android.kt:41)
+	at androidx.compose.ui.platform.AndroidUiDispatcher$dispatchCallback$1.doFrame(AndroidUiDispatcher.android.kt:69)
+	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1404)
+	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1415)
+	at android.view.Choreographer.doCallbacks(Choreographer.java:1015)
+	at android.view.Choreographer.doFrame(Choreographer.java:941)
+	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1389)
+	at android.os.Handler.handleCallback(Handler.java:959)
+	at android.os.Handler.dispatchMessage(Handler.java:100)
+	at android.os.Looper.loopOnce(Looper.java:232)
+	at android.os.Looper.loop(Looper.java:317)
+	at android.app.ActivityThread.main(ActivityThread.java:8705)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [androidx.compose.runtime.PausableMonotonicFrameClock@6ecaa55, androidx.compose.ui.platform.MotionDurationScaleImpl@1689c6a, StandaloneCoroutine{Cancelling}@d2f155b, AndroidUiDispatcher@4f001f8]
+
+========================================
+2026-10-25 15:54:37 data_app_crash (text, 4807 bytes)
+SystemUptimeMs: 94320730
+Process: com.example.studentcodex
+PID: 24846
+UID: 10210
+Frozen: false
+Flags: 0x20c8bf46
+Package: com.example.studentcodex v1 (1.0)
+Foreground: Yes
+Process-Runtime: 15899
+Timestamp: 2026-10-25 15:54:37.436+0000
+Build: google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.036/12592187:user/release-keys
+Crash-Handler: com.android.internal.os.RuntimeInit$KillApplicationHandler
+Loading-Progress: 1.0
+Dropped-Count: 0
+
+java.util.UnknownFormatConversionException: Conversion = 'End of String'
+	at java.util.Formatter$FormatSpecifierParser.peek(Formatter.java:2821)
+	at java.util.Formatter$FormatSpecifierParser.<init>(Formatter.java:2769)
+	at java.util.Formatter.parse(Formatter.java:2737)
+	at java.util.Formatter.format(Formatter.java:2686)
+	at java.util.Formatter.format(Formatter.java:2640)
+	at java.lang.String.format(String.java:4068)
+	at android.content.res.Resources.getString(Resources.java:584)
+	at androidx.compose.ui.res.StringResources_androidKt.stringResource(StringResources.android.kt:48)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt.ClassroomConnectionCard$lambda$71(SettingsScreen.kt:775)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt$$ExternalSyntheticLambda12.invoke(D8$$SyntheticClass:0)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:122)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:52)
+	at androidx.compose.material3.SurfaceKt$Surface$1.invoke(Surface.kt:130)
+	at androidx.compose.material3.SurfaceKt$Surface$1.invoke(Surface.kt:110)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:122)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:52)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:408)
+	at androidx.compose.material3.SurfaceKt.Surface-T9BRK9s(Surface.kt:107)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt.ClassroomConnectionCard(SettingsScreen.kt:681)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt.SettingsScreen(SettingsScreen.kt:226)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt.SettingsScreen$lambda$35(Unknown Source:14)
+	at com.example.studentcodex.ui.settings.SettingsScreenKt$$ExternalSyntheticLambda22.invoke(D8$$SyntheticClass:0)
+	at androidx.compose.runtime.RecomposeScopeImpl.compose(RecomposeScopeImpl.kt:204)
+	at androidx.compose.runtime.GapComposer.recomposeToGroupEnd(GapComposer.kt:1678)
+	at androidx.compose.runtime.GapComposer.skipCurrentGroup(GapComposer.kt:2014)
+	at androidx.compose.runtime.GapComposer.doCompose-aFTiNEg(GapComposer.kt:2655)
+	at androidx.compose.runtime.GapComposer.recompose-aFTiNEg$runtime(GapComposer.kt:2577)
+	at androidx.compose.runtime.CompositionImpl.recompose(Composition.kt:1164)
+	at androidx.compose.runtime.Recomposer.performRecompose(Recomposer.kt:1318)
+	at androidx.compose.runtime.Recomposer.access$performRecompose(Recomposer.kt:191)
+	at androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2.invokeSuspend$lambda$2(Recomposer.kt:655)
+	at androidx.compose.runtime.Recomposer$runRecomposeAndApplyChanges$2$$ExternalSyntheticLambda0.invoke(D8$$SyntheticClass:0)
+	at androidx.compose.ui.platform.AndroidUiFrameClock$withFrameNanos$2$callback$1.doFrame(AndroidUiFrameClock.android.kt:39)
+	at androidx.compose.ui.platform.AndroidUiDispatcher.performFrameDispatch(AndroidUiDispatcher.android.kt:108)
+	at androidx.compose.ui.platform.AndroidUiDispatcher.access$performFrameDispatch(AndroidUiDispatcher.android.kt:41)
+	at androidx.compose.ui.platform.AndroidUiDispatcher$dispatchCallback$1.doFrame(AndroidUiDispatcher.android.kt:69)
+	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1404)
+	at android.view.Choreographer$CallbackRecord.run(Choreographer.java:1415)
+	at android.view.Choreographer.doCallbacks(Choreographer.java:1015)
+	at android.view.Choreographer.doFrame(Choreographer.java:941)
+	at android.view.Choreographer$FrameDisplayEventReceiver.run(Choreographer.java:1389)
+	at android.os.Handler.handleCallback(Handler.java:959)
+	at android.os.Handler.dispatchMessage(Handler.java:100)
+	at android.os.Looper.loopOnce(Looper.java:232)
+	at android.os.Looper.loop(Looper.java:317)
+	at android.app.ActivityThread.main(ActivityThread.java:8705)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:886)
+	Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [androidx.compose.runtime.PausableMonotonicFrameClock@9ea90ba, androidx.compose.ui.platform.MotionDurationScaleImpl@ad47b6b, StandaloneCoroutine{Cancelling}@9d556c8, AndroidUiDispatcher@6f71361]
+

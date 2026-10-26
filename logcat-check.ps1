@@ -1,0 +1,2 @@
+$adb = "C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe"
+& $adb logcat -d -t 300 2>&1 | Select-String "studentcodex|AndroidRuntime|FATAL" | Select-Object -Last 15 | ForEach-Object { $_.Line }

@@ -1,0 +1,7 @@
+﻿adb.exe : cat: /data/local/tmp/ui_d.xml: No such file or directory
+At C:\Users\user\AndroidStudioProjects\StudentCodex\tap-icon.ps1:7 char:1
++ & $adb shell "cat /data/local/tmp/ui_d.xml" 2>&1 | Out-File -Encoding ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (cat: /data/loca...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

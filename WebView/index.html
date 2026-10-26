@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Student Codex — Teacher Dashboard. The cohort calendar for assignments, quizzes, exams and announcements.">
+  <title>Student Codex — Teacher Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f5b41'/%3E%3Cpath d='M16 8l10 4.5L16 17 6 12.5 16 8zm-6 7.2v4.6c0 1.8 2.7 3.2 6 3.2s6-1.4 6-3.2v-4.6l-6 2.7-6-2.7z' fill='%23f2f7f3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- The whole app renders into #app; dialogs mount into #overlays -->
+  <div id="app" class="app-root"></div>
+  <div id="overlays"></div>
+  <div id="toasts" class="toasts" aria-live="polite" aria-label="Notifications"></div>
+
+  <!-- Vendored, self-contained classic scripts (no CDN needed) -->
+  <script src="vendor/supabase.min.js"></script>
+  <script src="vendor/lucide.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

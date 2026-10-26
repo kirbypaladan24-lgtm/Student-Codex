@@ -1,0 +1,80 @@
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>if "Windows_NT" == "Windows_NT" setlocal
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>set DIRNAME=C:\Users\user\AndroidStudioProjects\StudentCodex\ 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>if "C:\Users\user\AndroidStudioProjects\StudentCodex\" == "" set DIRNAME=. 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>set APP_BASE_NAME=gradlew 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>set APP_HOME=C:\Users\user\AndroidStudioProjects\StudentCodex\ 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>for %i in ("C:\Users\user\AndroidStudioProjects\StudentCodex\") do set APP_HOME=%~fi 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>set APP_HOME=C:\Users\user\AndroidStudioProjects\StudentCodex\ 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>set DEFAULT_JVM_OPTS="-Xmx64m" "-Xms64m" 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>if defined JAVA_HOME goto findJavaFromJavaHome 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>set JAVA_EXE=java.exe 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>java.exe -version  1>NUL 2>&1 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>if 0 EQU 0 goto execute 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>set CLASSPATH= 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>"java.exe" "-Xmx64m" "-Xms64m"   "-Dorg.gradle.appname=gradlew" -classpath "" -jar "C:\Users\user\AndroidStudioProjects\StudentCodex\\gradle\wrapper\gradle-wrapper.jar" :app:assembleDebug --console=plain 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:processDebugNavigationResources
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:parseDebugLocalResources
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :app:compileDebugKotlin UP-TO-DATE
+> Task :app:compileDebugJavaWithJavac
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :app:generateDebugGlobalSynthetics UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:mergeDebugJavaResource UP-TO-DATE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :app:mergeExtDexDebug
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:mergeDebugResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :app:processDebugResources
+> Task :app:dexBuilderDebug
+> Task :app:mergeProjectDexDebug UP-TO-DATE
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+
+BUILD SUCCESSFUL in 2m 24s
+38 actionable tasks: 14 executed, 24 up-to-date
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.4.1/userguide/configuration_cache_enabling.html
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>if 0 EQU 0 goto mainEnd 
+
+C:\Users\user\AndroidStudioProjects\StudentCodex>if "Windows_NT" == "Windows_NT" endlocal

@@ -1,0 +1,2 @@
+$adb = "C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe"
+& $adb install -r "C:\Users\user\AndroidStudioProjects\StudentCodex\app\build\outputs\apk\debug\app-debug.apk" 2>&1 | Select-Object -First 2

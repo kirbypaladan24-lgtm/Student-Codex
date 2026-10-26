@@ -1,0 +1,7 @@
+﻿adb.exe : cat: /data/local/tmp/ui_a.xml: No such file or directory
+At C:\Users\user\AndroidStudioProjects\StudentCodex\dump3.ps1:3 char:1
++ & $adb shell "cat /data/local/tmp/ui_a.xml" 2>&1 | Out-File -Encoding ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (cat: /data/loca...le or directory:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 

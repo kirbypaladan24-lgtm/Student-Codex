@@ -1,0 +1,310 @@
+<resources>
+    <string name="app_name">Student Codex</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_beacon">Beacon</string>
+    <string name="nav_community">Community</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Shared states -->
+    <string name="state_loading">Loading</string>
+    <string name="state_error_title">Something went wrong</string>
+    <string name="action_retry">Try again</string>
+    <string name="no_deadline">No deadline</string>
+    <string name="effort_minutes">%1$d min estimated</string>
+    <string name="anonymous_author">Anonymous</string>
+
+    <!-- Due labels -->
+    <string name="due_overdue">Overdue</string>
+    <string name="due_within_hour">Due within an hour</string>
+    <plurals name="due_in_hours">
+        <item quantity="one">Due in %1$d hour</item>
+        <item quantity="other">Due in %1$d hours</item>
+    </plurals>
+    <string name="due_tomorrow">Tomorrow</string>
+    <plurals name="due_in_days">
+        <item quantity="one">Due in %1$d day</item>
+        <item quantity="other">Due in %1$d days</item>
+    </plurals>
+
+    <!-- Date group headers -->
+    <string name="group_today">Today</string>
+    <string name="group_tomorrow">Tomorrow</string>
+    <string name="group_no_deadline">No deadline</string>
+
+    <!-- Activity trust metadata -->
+    <string name="source_classroom">Classroom</string>
+    <!-- Green provenance chip on imported rows (Phase 6 visibility). -->
+    <string name="classroom_badge_label">Google Classroom</string>
+    <!-- Neutral provenance chip on rows entered by hand in the app. -->
+    <string name="manual_badge_label">Added manually</string>
+    <string name="source_manual">Manual</string>
+    <string name="source_report">Reported</string>
+    <string name="verification_imported">imported</string>
+    <string name="verification_teacher_confirmed">teacher-confirmed</string>
+    <string name="verification_student_reported">student-reported</string>
+    <string name="verification_needs_review">needs review</string>
+    <string name="label_personal">Personal</string>
+
+    <!-- Auth gate -->
+    <string name="auth_app_tagline">Deadlines, workload and campus help in one place.</string>
+    <string name="auth_title_sign_in">Welcome back</string>
+    <string name="auth_title_sign_up">Create your account</string>
+    <string name="auth_field_email">Email</string>
+    <string name="auth_field_first_name">First name</string>
+    <string name="auth_field_last_name">Last name</string>
+    <string name="auth_field_password">Password</string>
+    <string name="auth_field_confirm_password">Confirm password</string>
+    <string name="auth_show_password_cd">Show password</string>
+    <string name="auth_hide_password_cd">Hide password</string>
+    <string name="auth_submit_sign_in">Sign in</string>
+    <string name="auth_submit_sign_up">Create account</string>
+    <string name="auth_switch_to_sign_up">New here? Create an account</string>
+    <string name="auth_switch_to_sign_in">Already have an account? Sign in</string>
+    <string name="auth_or_divider">or</string>
+    <string name="auth_google_cta">Continue with Google</string>
+    <string name="auth_google_cd">Google logo</string>
+    <string name="auth_error_google">Google sign-in did not work. Check that Google Play services and a Google account are available on this device, then try again.</string>
+    <string name="auth_error_google_no_account">No Google account is signed in on this device yet. Add one under Settings → Accounts → Add account (on an emulator: Settings → Google), then try again.</string>
+    <string name="auth_error_google_rejected">Google rejected this app\'s sign-in request. The app\'s SHA-1 signing fingerprint is most likely not registered in the Google Cloud OAuth setup — see "Register the Android app" in docs/GOOGLE-SIGNIN.md.</string>
+    <string name="auth_google_setup_title">Google sign-in is not set up yet</string>
+    <string name="auth_google_setup_message">Email sign-in works right now. To turn on Google: create a Web-application OAuth client in Google Cloud Console, enable the Google provider in the Supabase dashboard with it, then add its client ID as GOOGLE_SERVER_CLIENT_ID in the .env file and rebuild the app. See docs/GOOGLE-SIGNIN.md in the project.</string>
+    <string name="auth_google_setup_dismiss">Got it</string>
+    <string name="auth_guest_cta">Explore without an account</string>
+    <string name="auth_completion_title">Finish setting up your account</string>
+    <string name="auth_completion_signed_in_as">Signed in as %1$s via Google</string>
+    <string name="auth_completion_password_note">This password lets you sign in with your email too — you keep the Google button either way.</string>
+    <string name="auth_completion_submit">Save and continue</string>
+    <string name="auth_completion_cancel">Sign out instead</string>
+    <string name="auth_guest_note">Demo mode — sample data, nothing is synced or saved online.</string>
+    <string name="auth_error_email">Enter a valid email address.</string>
+    <string name="auth_error_name">Enter both your first and last name.</string>
+    <string name="auth_error_email_taken">An account with this email already exists. Try signing in instead — or continue with Google using that same email to use both.</string>
+    <string name="auth_error_password_length">Password needs at least 6 characters.</string>
+    <string name="auth_error_school">Choose your program, year level, section, and campus.</string>
+    <string name="auth_error_courses">Add at least one course to continue.</string>
+    <string name="auth_school_details_title">School details</string>
+    <string name="auth_field_program">Program</string>
+    <string name="auth_field_year_level">Year level</string>
+    <string name="auth_field_section">Section</string>
+    <string name="auth_field_campus">Campus</string>
+    <string name="auth_registry_search_hint">Search</string>
+    <string name="auth_registry_no_match">No match</string>
+    <string name="auth_courses_title">Your courses</string>
+    <string name="auth_courses_hint">Add every subject you are taking — pick from the list or type your own code. You will choose from these courses when you add an activity.</string>
+    <string name="auth_courses_field_label">Course</string>
+    <string name="auth_courses_search_hint">Search or type a code</string>
+    <string name="auth_courses_new">Add %1$s as a new course</string>
+    <string name="auth_courses_no_match">No matching course</string>
+    <string name="auth_courses_bad_code">That doesn\'t look like a course code — use the short code from your class schedule, like CC1 or CS 101.</string>
+    <string name="auth_courses_remove_cd">Remove %1$s</string>
+    <string name="auth_directory_loading">Loading programs and campuses…</string>
+    <string name="auth_directory_error">Could not load the list of programs, year levels, sections, and campuses. Check your connection and try again.</string>
+    <string name="auth_directory_retry">Try again</string>
+    <string name="auth_error_password_mismatch">Passwords do not match.</string>
+    <string name="auth_error_generic">That did not work. Check your details and try again.</string>
+    <string name="auth_confirmation_title">Check your email</string>
+    <string name="auth_confirmation_message">Account created. Click the confirmation link we sent you, then sign in here.</string>
+    <string name="auth_confirmation_dismiss">Got it</string>
+
+    <!-- Home -->
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="home_subtitle_none">No deadlines in the next 7 days.</string>
+    <plurals name="home_subtitle_count">
+        <item quantity="one">One deadline in the next 7 days.</item>
+        <item quantity="other">%1$d deadlines in the next 7 days.</item>
+    </plurals>
+    <string name="home_section_upcoming">Upcoming deadlines</string>
+    <string name="home_section_community">From the community</string>
+    <string name="home_empty_title">Nothing due soon</string>
+    <string name="home_empty_message">When activities have deadlines they will show up here.</string>
+    <string name="action_all_activities">All activities</string>
+    <string name="home_ask_guidance">Ask a study question</string>
+
+    <!-- Beacon -->
+    <string name="beacon_title">Activity Beacon</string>
+    <string name="beacon_subtitle_live">Your deadlines, synced from your courses</string>
+    <string name="beacon_guest_notice">Sign in to record activities.</string>
+    <string name="beacon_empty_title">No activities yet</string>
+    <string name="beacon_empty_message_live">Record a manual activity, or ask your teacher when Google Classroom sync is enabled — your deadlines will appear here.</string>
+    <string name="beacon_add_activity">Add school works</string>
+    <string name="beacon_edit_cd">Edit %1$s</string>
+    <string name="beacon_delete_cd">Delete %1$s</string>
+    <string name="beacon_delete_confirm_title">Delete activity?</string>
+    <string name="beacon_delete_confirm_message">"%1$s" will be removed from your list. This cannot be undone.</string>
+    <string name="beacon_delete_confirm_yes">Delete</string>
+    <string name="beacon_delete_confirm_no">Keep</string>
+    <string name="beacon_editor_new_title">New activity</string>
+    <string name="beacon_editor_edit_title">Edit activity</string>
+    <string name="beacon_editor_title_label">Title</string>
+    <string name="beacon_editor_desc_label">Notes (optional)</string>
+    <string name="beacon_editor_type_label">Type</string>
+    <string name="beacon_editor_due_label">Due date</string>
+    <string name="beacon_editor_no_due">No deadline</string>
+    <string name="beacon_editor_pick_date_cd">Pick a date</string>
+    <string name="beacon_editor_class_label">Which course?</string>
+    <string name="beacon_editor_course_field_label">Course</string>
+    <string name="beacon_editor_courses_loading">Loading your courses…</string>
+    <string name="beacon_editor_no_sections">No courses yet — add your course codes under Settings → School details, then try again.</string>
+    <string name="beacon_editor_share_hint">Shared with your course section — your teacher and classmates see it on the calendar instantly. No approval needed.</string>
+    <string name="beacon_editor_origin_class">Course activity — shared with your section.</string>
+    <string name="beacon_editor_origin_course">Course activity for %1$s — shared with your section.</string>
+    <string name="beacon_error_section_required">Pick which course this belongs to.</string>
+    <string name="beacon_editor_save_new">Save activity</string>
+    <string name="beacon_editor_save_edit">Save changes</string>
+    <string name="beacon_error_title_blank">Give the activity a title.</string>
+    <string name="beacon_date_pick_confirm">OK</string>
+    <string name="beacon_date_pick_cancel">Cancel</string>
+    <string name="beacon_filter_empty_title">Nothing in this filter</string>
+    <string name="beacon_filter_empty_message">No activities match the selected filter right now.</string>
+    <string name="filter_all">All</string>
+    <string name="filter_classroom">Classroom</string>
+    <string name="filter_assignments">Assignments</string>
+    <string name="filter_exams">Exams</string>
+    <string name="filter_quizzes">Quizzes</string>
+    <string name="filter_projects">Projects</string>
+    <string name="filter_activity">Activity</string>
+    <string name="type_assignment">Assignment</string>
+    <string name="type_quiz">Quiz</string>
+    <string name="type_exam">Exam</string>
+    <string name="type_project">Project</string>
+    <string name="type_announcement">Announcement</string>
+    <string name="type_other">Activity</string>
+
+    <!-- Community -->
+    <string name="community_title">Community</string>
+    <string name="community_subtitle_live">Posts from students on your campus</string>
+    <string name="community_guest_notice">Sign in to post, comment, and like.</string>
+    <string name="community_empty_title">No posts yet</string>
+    <string name="community_empty_message">Be the first to share something study-related with your campus.</string>
+    <string name="community_report_post_cd">Report this post</string>
+    <string name="community_report_title">Report post</string>
+    <string name="community_report_reason_spam">Spam</string>
+    <string name="community_report_reason_harassment">Harassment</string>
+    <string name="community_report_reason_off_topic">Off topic</string>
+    <string name="community_report_reason_inappropriate">Inappropriate</string>
+    <string name="community_report_reason_other">Other</string>
+    <string name="community_report_details_label">Anything else we should know? (optional)</string>
+    <string name="community_report_submit">Submit report</string>
+    <string name="community_report_done">Report submitted. Thank you for keeping the community safe.</string>
+    <plurals name="comment_count">
+        <item quantity="one">%1$d comment</item>
+        <item quantity="other">%1$d comments</item>
+    </plurals>
+    <plurals name="like_count">
+        <item quantity="one">%1$d like</item>
+        <item quantity="other">%1$d likes</item>
+    </plurals>
+    <string name="like_add_cd">Like this post. %1$d likes so far.</string>
+    <string name="like_remove_cd">Remove your like. %1$d likes so far.</string>
+    <string name="comments_title">Comments</string>
+    <string name="comments_empty_title">No comments yet</string>
+    <string name="comments_empty_message">Be the first to reply.</string>
+    <string name="comments_input_hint">Add a comment…</string>
+    <string name="comments_send_cd">Send comment</string>
+    <string name="comments_demo_note">Demo mode — replies stay on this device and reset on restart.</string>
+    <string name="time_just_now">Just now</string>
+    <plurals name="time_minutes_ago">
+        <item quantity="one">%1$d minute ago</item>
+        <item quantity="other">%1$d minutes ago</item>
+    </plurals>
+    <plurals name="time_hours_ago">
+        <item quantity="one">%1$d hour ago</item>
+        <item quantity="other">%1$d hours ago</item>
+    </plurals>
+    <string name="avatar_named_cd">Profile photo placeholder for %1$s</string>
+    <string name="avatar_anonymous_cd">Anonymous author mark</string>
+
+    <!-- Community composer -->
+    <string name="community_author_you">You</string>
+    <string name="community_composer_hint">What\'s on your mind?</string>
+    <string name="community_composer_photo_cd">Add a photo to your post</string>
+    <string name="community_composer_title">Create post</string>
+    <string name="community_composer_input_hint">Say something study-related…</string>
+    <string name="community_composer_post">Post</string>
+    <string name="community_composer_remove_photo_cd">Remove the selected photo</string>
+    <string name="community_composer_demo_note">Posts are shared with signed-in students on your campus.</string>
+    <string name="community_guest_note">Browsing as a guest — sign in to post, like, comment, or report.</string>
+    <string name="community_composer_post_anonymous">Post anonymously</string>
+    <string name="community_composer_anon_note">Your name is hidden from other students</string>
+    <string name="community_post_image_cd">Photo attached to this post</string>
+
+    <!-- Guidance -->
+    <string name="guidance_title">Guidance</string>
+    <string name="guidance_empty_title">Ask me anything</string>
+    <string name="guidance_empty_message">I answer questions about using Student Codex, planning your study time, and community rules. When I am not sure, I will say so.</string>
+    <string name="guidance_input_hint">Ask a question…</string>
+    <string name="guidance_send_cd">Send question</string>
+    <string name="guidance_suggested_title">Try asking</string>
+    <string name="guidance_suggestion_prefix">Try: %1$s</string>
+    <string name="guidance_suggestion_ask">Ask this follow-up question</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_subtitle">Your profile, account, school details, and the floating assistant.</string>
+    <string name="settings_section_school">School details</string>
+    <string name="settings_row_profile">Profile</string>
+    <string name="settings_row_profile_note">View your profile and connected services.</string>
+    <string name="settings_row_change_password">Change password</string>
+    <string name="settings_row_change_password_note">Choose a new password for signing in.</string>
+    <string name="settings_row_change_school">Change school details</string>
+    <string name="settings_row_change_school_note">Update your program, year level, section, campus, or courses.</string>
+    <string name="settings_row_sign_out">Sign out</string>
+    <string name="settings_row_exit_demo">Exit demo mode</string>
+    <string name="settings_row_sign_out_note">Returns to the sign-in screen.</string>
+    <string name="settings_row_sign_out_note_demo">Returns to the sign-in screen. Demo data is not saved.</string>
+    <string name="settings_change_password_title">Change password</string>
+    <string name="settings_change_password_hint">Choose a new password for signing in with your email.</string>
+    <string name="settings_field_new_password">New password</string>
+    <string name="settings_field_confirm_new_password">Confirm new password</string>
+    <string name="settings_password_saved">Password updated.</string>
+    <string name="settings_school_hint">Update your program, year level, section, campus, or courses.</string>
+    <string name="settings_school_save">Save school details</string>
+    <string name="settings_school_saved">School details saved.</string>
+    <string name="settings_guest_note">Sign in to manage account and school settings. The floating assistant works either way.</string>
+
+    <!-- Guidance floating assistant -->
+    <string name="guidance_overlay_section_title">Floating assistant</string>
+    <string name="guidance_overlay_section_hint">Shows on the other pages while you browse. Pick the style you like.</string>
+    <string name="guidance_overlay_mode_chat_head">Chat head</string>
+    <string name="guidance_overlay_mode_edge_panel">Edge panel</string>
+    <string name="guidance_overlay_head_cd">Guidance chat head. Drag to move it, tap to ask a question.</string>
+    <string name="guidance_overlay_edge_handle_cd">Guidance edge panel. Drag the handle to move it, tap or pull it toward the middle to open.</string>
+    <string name="guidance_overlay_panel_close_cd">Close the guidance assistant</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Profile</string>
+    <string name="profile_back_cd">Go back to settings</string>
+    <string name="profile_guest_banner">Demo mode — not signed in</string>
+    <string name="profile_signed_in_as">Signed in as %1$s</string>
+    <string name="profile_row_classroom">Google Classroom</string>
+    <string name="classroom_not_enabled_note">Sync is not enabled yet. Activities arrive here as soon as your teacher\'s Classroom integration is connected.</string>
+    <string name="classroom_connected_note">Connected</string>
+    <string name="classroom_revoked_note">Access was revoked on the Google side — reconnect when sync is enabled.</string>
+    <string name="classroom_expired_note">Authorization expired — reconnect when sync is enabled.</string>
+    <string name="classroom_disconnected_note">Disconnected. Your activities stay; new syncing is off.</string>
+    <string name="classroom_disconnect">Disconnect Google Classroom</string>
+    <string name="classroom_connect">Connect &amp; Sync</string>
+    <string name="classroom_sync_now">Sync now</string>
+    <string name="classroom_auto_sync_title">Auto-sync school works</string>
+    <string name="classroom_auto_sync_hint">Quietly imports new Google Classroom work every time you open the app.</string>
+    <string name="classroom_connecting">Syncing…</string>
+    <string name="classroom_sync_ok">Imported %1$d new · refreshed %2$d activities from %3$d classes.</string>
+    <string name="classroom_sync_partial">Imported %1$d new · refreshed %2$d activities · no match for: %3$s.</string>
+    <string name="classroom_sync_failed">Sync failed: %1$s</string>
+    <string name="classroom_auth_declined">No Google authorization given — nothing was synced.</string>
+    <string name="classroom_auth_rejected">Google refused the request (code %1$d) — the app is not registered in the Google Cloud project. See the Classroom setup notes.</string>
+    <string name="profile_row_notifications">Notifications</string>
+    <string name="profile_phase_note">Planned for Phase %1$d of the build plan.</string>
+    <string name="profile_deferred_note">Deferred - not part of the first release.</string>
+    <string name="profile_version_note">Student Codex MVP build — sign-in is real; lists and community content are demo data, not synced yet.</string>
+</resources>
+
+
+
+
+
+

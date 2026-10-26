@@ -1,0 +1,2 @@
+$adb = "C:\Users\user\AppData\Local\Android\Sdk\platform-tools\adb.exe"
+& $adb shell "getprop init.svc.zygote; getprop init.svc.surfaceflinger; getprop sys.boot_completed; ps -A | grep -E 'system_server|package' | head -4"
